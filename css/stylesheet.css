@@ -5,7 +5,9 @@ html, body {
     font-weight: 350;
 }
 h1 {
-    font-size: 1.5em;
+    font-size: 2.5em;
+    padding: 0;
+    margin: 0;
 }
 .nav {
     background-color: #2d2d2d;
