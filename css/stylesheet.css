@@ -1,0 +1,25 @@
+html, body {
+    background-color: black;
+    color: white;
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    font-weight: 350;
+}
+h1 {
+    font-size: 1.5em;
+}
+.nav {
+    margin: 10px;
+    background-color: #3700B3;
+    display: block;
+    float: left;
+}
+.nav-element {
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+}
+.nav-element:hover {
+    background-color: #BB86FC;
+    color: black;
+}
+
