@@ -40,6 +40,6 @@ li a {
     color: white;
     background-color: #BB86FC;
 }
-li a:hover {
+.nav-element li a:hover {
     color: black;
 }
