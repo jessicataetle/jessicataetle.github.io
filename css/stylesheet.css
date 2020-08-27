@@ -8,18 +8,38 @@ h1 {
     font-size: 1.5em;
 }
 .nav {
-    margin: 10px;
-    background-color: #3700B3;
+    background-color: #2d2d2d;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
     display: block;
-    float: left;
+    overflow: hidden;
 }
 .nav-element {
     text-decoration: none;
-    color: white;
     padding: 5px;
+    display: inline;
+    float: left;
+    color: white;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 12px;
+    text-decoration: none
 }
 .nav-element:hover {
+    background-color: #7c7c7c;
+}
+.active {
+    text-decoration: none;
+    padding: 5px;
+    display: inline;
+    float: left;
+    color: white;
     background-color: #BB86FC;
+}
+li a:hover {
     color: black;
 }
-
