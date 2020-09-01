@@ -12,14 +12,10 @@ h1 {
 }
 
 .header {
-    font-size: 2.5em;
+    font-size: 3em;
     padding: 10px 12px;
-    margin: 100;
-    padding-left: 30;
-    margin-left: 100;
     display: inline;
-    text-decoration: none;
-    color: white;
+    font-family: 'Lexend Peta', sans-serif;
 }
 
 .header a {
@@ -38,7 +34,7 @@ h1 {
 
 .nav-element {
     text-decoration: none;
-    padding: 5px;
+    padding: 10px;
     display: inline;
     float: right;
     color: white;
@@ -58,7 +54,7 @@ li a {
 
 .active {
     text-decoration: none;
-    padding: 5px;
+    padding: 10px;
     display: inline;
     float: right;
     color: white;
@@ -70,26 +66,39 @@ li a {
 }
 
 p {
-    font-size: 1.25em;
+    font-size: 1em;
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
 }
 
+.center-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 .section {
     padding: 10px;
     background-color: #1f1f1f;
     margin-top: 20px;
+    margin: 10px;
+    display: block;
 }
 
 .section-header {
-    font-size: 2em;
+    font-size: 1.5em;
     margin: 0;
 }
 
 .accent-header {
     background-color: #BB86FC;
-    float: left;
+    padding: 2px;
+    margin-right: 5px;
+    display: inline;
+}
+.accent-second-header {
+    background-color: #7c7c7c;
+    display: inline;
     padding: 2px;
     margin-right: 5px;
 }
