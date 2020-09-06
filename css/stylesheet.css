@@ -71,7 +71,7 @@ li a {
 p {
     font-size: 1em;
     margin: 0;
-    padding: 0;
+    padding: 1px;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -97,6 +97,7 @@ p {
     background-color: #BB86FC;
     padding: 2px;
     margin-right: 5px;
+    margin-bottom: 5px;
     display: inline;
 }
 
