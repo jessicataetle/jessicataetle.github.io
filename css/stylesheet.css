@@ -93,6 +93,8 @@ p {
 .center-image {
     display: inline;
     float: right;
+    margin-left: 10px;
+    margin-top: 20px;
 }
 
 .section {
