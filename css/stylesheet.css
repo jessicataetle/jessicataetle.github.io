@@ -30,7 +30,9 @@ h1 {
     font-family: 'Lexend Peta', sans-serif;
     float: left;
 }
-
+li {
+    font-family: 'PT Sans', sans-serif;
+}
 .header a {
     text-decoration: none;
     color: white;
