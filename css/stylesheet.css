@@ -1,7 +1,6 @@
 html, body {
     background-color: black;
     color: white;
-    font-family: 'PT Sans', sans-serif;
 }
 
 h1 {
@@ -44,6 +43,7 @@ h1 {
     padding: 0;
     display: block;
     overflow: hidden;
+    font-family: 'PT Sans', sans-serif;
 }
 
 .nav-element {
