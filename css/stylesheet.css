@@ -148,7 +148,6 @@ p {
 .center-image {
     width: 45%;
     float: right;
-    margin-left: auto;
 }
 
 .home-second-header {
@@ -157,7 +156,9 @@ p {
     margin-bottom: 10px;
     font-family: 'Lexend Peta', sans-serif;
     padding-bottom: 10px;
+
 }
+
 .home-header {
     font-size: 2.5em;
     padding: 0;
