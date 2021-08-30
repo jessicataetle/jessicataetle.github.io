@@ -55,16 +55,18 @@ p {
 .nav {
     background-color: #2d2d2d;
     list-style-type: none;
-    margin: 10;
-    padding: 0;
-    display: block;
     overflow: hidden;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
     font-family: 'PT Sans', sans-serif;
 }
 
 .nav-element {
     text-decoration: none;
     padding: 5px;
+    width: 75px;
     display: inline;
     float: right;
     color: white;
@@ -77,6 +79,7 @@ p {
 .active {
     text-decoration: none;
     padding: 5px;
+    width: 75px;
     display: inline;
     float: right;
     color: white;
@@ -179,7 +182,7 @@ p {
 
 }
 
-.home-header {
+.page-header {
     font-size: 2.5em;
     padding: 0;
     margin: 15px;
