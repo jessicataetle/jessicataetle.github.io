@@ -66,10 +66,48 @@ src/
    ```
    Creates an optimized production build in the `build/` directory
 
-4. **Run tests:**
-   ```bash
-   npm test
-   ```
+## 🚀 Deploying to GitHub Pages
+
+**Important:** The build is already configured for GitHub Pages with routing support.
+
+### Quick Deploy
+
+Run the deployment script:
+
+```bash
+./deploy.sh
+```
+
+This will:
+1. Build the React app
+2. Create/update the `gh-pages` branch
+3. Force push to overwrite any existing content
+4. Deploy your site to GitHub Pages
+
+You'll be prompted for your GitHub credentials when pushing.
+
+### Alternative: Manual Deploy
+
+```bash
+npm run build
+cd build
+git init
+git checkout -b gh-pages
+git add -A
+git commit -m "Deploy React app"
+git push -f https://github.com/jessicataetle/jessicataetle.github.io.git gh-pages:gh-pages
+cd ..
+```
+
+### After Deployment
+
+Wait 1-2 minutes then visit https://jessicataetle.github.io
+
+All routes will work correctly:
+- `/` - Home
+- `/portfolio` - Design Portfolio  
+- `/projects` - Coding Projects
+- `/resume` - Resume
 
 ## 📦 Available Scripts
 
@@ -135,8 +173,6 @@ This project is for personal use.
 - Georgia Institute of Technology - Computational Media Program
 - All mentors and collaborators from internships at Intuit, Red Canary, and FullStory
 
-## 📚 Additional Documentation
+## 📚 Additional Information
 
-- **[QUICKSTART.md](QUICKSTART.md)** - Quick start guide to get running
-- **[MIGRATION-GUIDE.md](MIGRATION-GUIDE.md)** - Detailed migration information from HTML to React
 - **[archived-html-site/](archived-html-site/)** - Original HTML version of the website
