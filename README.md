@@ -23,140 +23,134 @@ A modern, responsive portfolio website built with React and TypeScript, showcasi
 ## 🏗️ Project Structure
 
 ```
-src/
-├── components/          # Reusable UI components
-│   ├── Header/         # Site header
-│   ├── Navigation/     # Navigation menu
-│   ├── Layout/         # Page layout wrapper
-│   ├── Section/        # Content section wrapper
-│   └── PageHeader/     # Page title component
-├── pages/              # Page components
-│   ├── Home/          # About page
-│   ├── Portfolio/     # Design portfolio
-│   ├── Projects/      # Coding projects
-│   └── Resume/        # Resume/CV
-├── App.tsx            # Main app component with routing
-├── index.tsx          # App entry point
-└── index.css          # Global styles
+jessicataetle.github.io/
+├── .react-source/          # React source code
+│   ├── src/               # Components, pages, styles
+│   ├── public/            # Public assets template
+│   ├── package.json       # Dependencies
+│   └── tsconfig.json      # TypeScript config
+├── Root directory/         # Deployed build files
+│   ├── index.html         # Main HTML
+│   ├── 404.html          # SPA routing support
+│   ├── static/           # JS and CSS bundles
+│   └── media/            # Images and assets
+├── archived-html-site/    # Original HTML version
+└── README.md             # This file
 ```
 
-## 🛠️ Getting Started
+## 🛠️ Development
 
 ### Prerequisites
 
 - Node.js (v14 or higher)
 - npm or yarn
 
-### Installation
+### Getting Started
 
 1. **Install dependencies:**
    ```bash
    npm install
    ```
 
-2. **Start the development server:**
+2. **Start development server:**
    ```bash
    npm start
    ```
-   The app will open at [http://localhost:3000](http://localhost:3000)
+   Opens at [http://localhost:3000](http://localhost:3000)
 
 3. **Build for production:**
    ```bash
    npm run build
    ```
-   Creates an optimized production build in the `build/` directory
+   Creates optimized build in `build/` directory
 
-## 🚀 Deploying to GitHub Pages
+## 🚀 Deploying Changes
 
-**Important:** The build is already configured for GitHub Pages with routing support.
+This site deploys from the **master branch root** (since it's a `username.github.io` repository).
 
-### Quick Deploy
+### To Deploy Updates:
 
-Run the deployment script:
+1. **Make your changes** in `.react-source/src/`
 
-```bash
-./deploy.sh
-```
+2. **Build the app:**
+   ```bash
+   npm run build
+   ```
 
-This will:
-1. Build the React app
-2. Create/update the `gh-pages` branch
-3. Force push to overwrite any existing content
-4. Deploy your site to GitHub Pages
+3. **Run the deploy script:**
+   ```bash
+   ./deploy-simple.sh
+   ```
+   This copies build files to root and prepares for deployment
 
-You'll be prompted for your GitHub credentials when pushing.
+4. **Commit and push:**
+   ```bash
+   git add .
+   git commit -m "Update site"
+   git push origin master
+   ```
 
-### Alternative: Manual Deploy
+   Or use Cursor's Source Control panel: Click "..." → Push
 
-```bash
-npm run build
-cd build
-git init
-git checkout -b gh-pages
-git add -A
-git commit -m "Deploy React app"
-git push -f https://github.com/jessicataetle/jessicataetle.github.io.git gh-pages:gh-pages
-cd ..
-```
+5. **Wait 1-2 minutes** - Your changes will be live at https://jessicataetle.github.io
 
-### After Deployment
+### Authentication Note
 
-Wait 1-2 minutes then visit https://jessicataetle.github.io
+If prompted for credentials, use:
+- **Username:** Your GitHub username
+- **Password:** Personal Access Token (not your account password)
 
-All routes will work correctly:
-- `/` - Home
-- `/portfolio` - Design Portfolio  
+Create a token at: https://github.com/settings/tokens
+
+## 📱 Live Site
+
+Visit: **https://jessicataetle.github.io**
+
+All routes work correctly:
+- `/` - Home/About
+- `/portfolio` - Design Portfolio
 - `/projects` - Coding Projects
 - `/resume` - Resume
 
-## 📦 Available Scripts
-
-| Command | Description |
-|---------|-------------|
-| `npm start` | Runs the app in development mode |
-| `npm run build` | Builds the app for production |
-| `npm test` | Launches the test runner |
-| `npm run eject` | Ejects from Create React App (⚠️ one-way operation) |
-
 ## 🎨 Design Principles
 
-This project follows modern React best practices:
+- **Component Modularity:** Each component is self-contained with its own styles
+- **Type Safety:** TypeScript ensures compile-time type checking
+- **CSS Modules:** Scoped styles prevent naming conflicts
+- **Responsive Design:** Mobile-first approach with media queries
+- **Performance:** Optimized production builds
 
-- **Component Modularity**: Each component is self-contained with its own styles
-- **Type Safety**: TypeScript ensures compile-time type checking
-- **CSS Modules**: Scoped styles prevent naming conflicts
-- **Responsive Design**: Mobile-first approach with media queries
-- **Accessibility**: Semantic HTML and proper ARIA labels
-- **Performance**: Code splitting and lazy loading ready
+## 📦 Key Files
+
+| File | Purpose |
+|------|---------|
+| `.react-source/src/` | React source code |
+| `deploy-simple.sh` | Deployment helper script |
+| `index.html` | Deployed app entry point |
+| `404.html` | Enables client-side routing on GitHub Pages |
+| `archived-html-site/` | Original HTML website backup |
 
 ## 🔧 Customization
 
 ### Updating Content
 
-- **Personal Info**: Edit `src/pages/Home/Home.tsx`
-- **Portfolio Items**: Edit `src/pages/Portfolio/Portfolio.tsx`
-- **Projects**: Edit `src/pages/Projects/Projects.tsx`
-- **Resume**: Edit `src/pages/Resume/Resume.tsx`
+- **Personal Info:** `.react-source/src/pages/Home/Home.tsx`
+- **Portfolio Items:** `.react-source/src/pages/Portfolio/Portfolio.tsx`
+- **Projects:** `.react-source/src/pages/Projects/Projects.tsx`
+- **Resume:** `.react-source/src/pages/Resume/Resume.tsx`
 
 ### Styling
 
-- **Global Styles**: `src/index.css`
-- **Component Styles**: Each component has its own `.module.css` file
-- **Theme Colors**: Update CSS custom properties in component stylesheets
+- **Global Styles:** `.react-source/src/index.css`
+- **Component Styles:** Each component has its own `.module.css` file
+- **Theme Colors:** Search for `#BB86FC` (purple) and `#7c7c7c` (gray)
 
 ### Adding New Pages
 
-1. Create a new folder in `src/pages/`
+1. Create folder in `.react-source/src/pages/`
 2. Add `YourPage.tsx` and `YourPage.module.css`
-3. Add route in `src/App.tsx`
-4. Add navigation link in `src/components/Navigation/Navigation.tsx`
-
-## 📱 Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
+3. Add route in `.react-source/src/App.tsx`
+4. Add navigation link in `.react-source/src/components/Navigation/Navigation.tsx`
 
 ## 📄 License
 
@@ -172,7 +166,3 @@ This project is for personal use.
 
 - Georgia Institute of Technology - Computational Media Program
 - All mentors and collaborators from internships at Intuit, Red Canary, and FullStory
-
-## 📚 Additional Information
-
-- **[archived-html-site/](archived-html-site/)** - Original HTML version of the website
