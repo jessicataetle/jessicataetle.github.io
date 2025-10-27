@@ -17,25 +17,35 @@ A modern, responsive portfolio website built with React and TypeScript, showcasi
 - ✅ Component-based architecture
 - ✅ CSS Modules for scoped styling
 - ✅ React Router for seamless navigation
-- ✅ Optimized performance
+- ✅ GitHub Pages SPA routing support
 - ✅ Clean, maintainable code structure
 
 ## 🏗️ Project Structure
 
 ```
 jessicataetle.github.io/
-├── .react-source/          # React source code
-│   ├── src/               # Components, pages, styles
-│   ├── public/            # Public assets template
-│   ├── package.json       # Dependencies
-│   └── tsconfig.json      # TypeScript config
-├── Root directory/         # Deployed build files
-│   ├── index.html         # Main HTML
-│   ├── 404.html          # SPA routing support
-│   ├── static/           # JS and CSS bundles
-│   └── media/            # Images and assets
-├── archived-html-site/    # Original HTML version
-└── README.md             # This file
+├── src/                    # React source code
+│   ├── components/        # Reusable UI components
+│   │   ├── Header/       # Site header
+│   │   ├── Navigation/   # Navigation menu
+│   │   ├── Layout/       # Page layout wrapper
+│   │   ├── Section/      # Content section wrapper
+│   │   └── PageHeader/   # Page title component
+│   ├── pages/            # Page components
+│   │   ├── Home/        # About page
+│   │   ├── Portfolio/   # Design portfolio
+│   │   ├── Projects/    # Coding projects
+│   │   └── Resume/      # Resume/CV
+│   ├── App.tsx          # Main app with routing
+│   └── index.tsx        # App entry point
+├── public/               # Public assets
+│   ├── media/           # Images and files
+│   ├── 404.html         # SPA routing support
+│   └── index.html       # HTML template
+├── docs/                 # Production build (deployed to GH Pages)
+├── archived-html-site/   # Original HTML version
+├── package.json          # Dependencies and scripts
+└── README.md            # This file
 ```
 
 ## 🛠️ Development
@@ -62,47 +72,44 @@ jessicataetle.github.io/
    ```bash
    npm run build
    ```
-   Creates optimized build in `build/` directory
+   Creates optimized build in `docs/` directory
 
-## 🚀 Deploying Changes
+## 🚀 Deployment
 
-This site deploys from the **master branch root** (since it's a `username.github.io` repository).
+This site uses GitHub Pages with the `docs/` folder strategy for deployment.
 
-### To Deploy Updates:
+### One-Command Deploy
 
-1. **Make your changes** in `.react-source/src/`
+```bash
+npm run deploy
+```
 
-2. **Build the app:**
-   ```bash
-   npm run build
-   ```
+This will:
+1. Build the React app
+2. Move build to `docs/` folder
+3. Commit the changes
+4. Push to master
 
-3. **Run the deploy script:**
-   ```bash
-   ./deploy-simple.sh
-   ```
-   This copies build files to root and prepares for deployment
+**OR manually:**
 
-4. **Commit and push:**
-   ```bash
-   git add .
-   git commit -m "Update site"
-   git push origin master
-   ```
+```bash
+npm run build
+git add .
+git commit -m "Deploy updates"
+git push origin master
+```
 
-   Or use Cursor's Source Control panel: Click "..." → Push
+### GitHub Pages Settings
 
-5. **Wait 1-2 minutes** - Your changes will be live at https://jessicataetle.github.io
+Make sure your repository settings are configured:
+1. Go to **Settings** → **Pages**
+2. Source: **Deploy from a branch**
+3. Branch: **master**
+4. Folder: **/docs**
 
-### Authentication Note
+After pushing, your site will be live at **https://jessicataetle.github.io** in 1-2 minutes.
 
-If prompted for credentials, use:
-- **Username:** Your GitHub username
-- **Password:** Personal Access Token (not your account password)
-
-Create a token at: https://github.com/settings/tokens
-
-## 📱 Live Site
+## 🌐 Live Site
 
 Visit: **https://jessicataetle.github.io**
 
@@ -118,39 +125,46 @@ All routes work correctly:
 - **Type Safety:** TypeScript ensures compile-time type checking
 - **CSS Modules:** Scoped styles prevent naming conflicts
 - **Responsive Design:** Mobile-first approach with media queries
-- **Performance:** Optimized production builds
-
-## 📦 Key Files
-
-| File | Purpose |
-|------|---------|
-| `.react-source/src/` | React source code |
-| `deploy-simple.sh` | Deployment helper script |
-| `index.html` | Deployed app entry point |
-| `404.html` | Enables client-side routing on GitHub Pages |
-| `archived-html-site/` | Original HTML website backup |
+- **Accessibility:** Semantic HTML and proper ARIA labels
+- **Performance:** Code splitting and lazy loading ready
 
 ## 🔧 Customization
 
 ### Updating Content
 
-- **Personal Info:** `.react-source/src/pages/Home/Home.tsx`
-- **Portfolio Items:** `.react-source/src/pages/Portfolio/Portfolio.tsx`
-- **Projects:** `.react-source/src/pages/Projects/Projects.tsx`
-- **Resume:** `.react-source/src/pages/Resume/Resume.tsx`
+- **Personal Info:** `src/pages/Home/Home.tsx`
+- **Portfolio Items:** `src/pages/Portfolio/Portfolio.tsx`
+- **Projects:** `src/pages/Projects/Projects.tsx`
+- **Resume:** `src/pages/Resume/Resume.tsx`
 
 ### Styling
 
-- **Global Styles:** `.react-source/src/index.css`
+- **Global Styles:** `src/index.css`
 - **Component Styles:** Each component has its own `.module.css` file
 - **Theme Colors:** Search for `#BB86FC` (purple) and `#7c7c7c` (gray)
 
 ### Adding New Pages
 
-1. Create folder in `.react-source/src/pages/`
+1. Create a new folder in `src/pages/`
 2. Add `YourPage.tsx` and `YourPage.module.css`
-3. Add route in `.react-source/src/App.tsx`
-4. Add navigation link in `.react-source/src/components/Navigation/Navigation.tsx`
+3. Add route in `src/App.tsx`
+4. Add navigation link in `src/components/Navigation/Navigation.tsx`
+
+## 📦 Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm start` | Runs the app in development mode |
+| `npm run build` | Builds the app and moves to docs/ |
+| `npm test` | Launches the test runner |
+| `npm run deploy` | Builds and deploys to GitHub Pages |
+
+## 📱 Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
 
 ## 📄 License
 
@@ -166,3 +180,7 @@ This project is for personal use.
 
 - Georgia Institute of Technology - Computational Media Program
 - All mentors and collaborators from internships at Intuit, Red Canary, and FullStory
+
+## 📚 Additional Information
+
+- **[archived-html-site/](archived-html-site/)** - Original HTML version of the website
